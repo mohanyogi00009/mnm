@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('many times'),
+            const Text('many more  times'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
