@@ -18,6 +18,11 @@ class MyApp extends StatelessWidget {
               debugPrint("Login button pressed");
               //here there will be the login logic to get to the second page.
               //the debugPrint should be replaced with the login logic.
+              // Navigator.pushReplacement(
+              //               context,
+              //               MaterialPageRoute(builder: (context) => const HomePage()),
+              //             );
+              // remove the forward slashes when the login page is done
             },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
