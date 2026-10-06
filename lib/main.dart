@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,13 +17,11 @@ class MyApp extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () {
               debugPrint("Login button pressed");
-              //here there will be the login logic to get to the second page.
-              //the debugPrint should be replaced with the login logic.
-              // Navigator.pushReplacement(
-              //               context,
-              //               MaterialPageRoute(builder: (context) => const HomePage()),
-              //             );
-              // remove the forward slashes when the login page is done
+              //here is the login logic to get to the second page
+               Navigator.pushReplacement(
+                             context,
+                             MaterialPageRoute(builder: (context) => const HomePage()),
+                           );
             },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -35,3 +34,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
