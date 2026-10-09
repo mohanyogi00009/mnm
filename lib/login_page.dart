@@ -1,32 +1,70 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'home_page.dart'; // Import your home page
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            debugPrint("Login button pressed");
-
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const HomePage(),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24,
-              vertical: 12,
+      appBar: AppBar(title: const Text('Login page')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const TextField(
+              decoration: InputDecoration(labelText: 'Email'),
             ),
-            textStyle: const TextStyle(fontSize: 18),
-          ),
-          child: const Text('Login'),
+            const SizedBox(height: 12),
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(labelText: 'Password'),
+            ),
+            const SizedBox(height: 24),
+         SizedBox(
+         width: 220,
+            child:ElevatedButton(
+              onPressed: () {
+                // Navigate to HomePage
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, // Button color
+                foregroundColor: Colors.white, // Text color
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+              child: const Text('Login'),
+            ),
+         ),  // Space between the two buttons
+            const SizedBox(height: 12),
+
+            SizedBox(
+              width: 220,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Create account function
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                child: const Text('Create an Account'),
+              ),
+            ),
+          ]
         ),
       ),
     );
