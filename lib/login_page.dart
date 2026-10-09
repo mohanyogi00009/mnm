@@ -16,6 +16,7 @@ class LoginPage extends StatelessWidget {
               decoration: InputDecoration(labelText: 'Email'),
             ),
             const SizedBox(height: 12),
+            // password code
             const TextField(
               obscureText: true,
               decoration: InputDecoration(labelText: 'Password'),
