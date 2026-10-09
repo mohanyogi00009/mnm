@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // Button color
+                backgroundColor: const Color(0xFF54347E), // Button color
                 foregroundColor: Colors.white, // Text color
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 shape: RoundedRectangleBorder(
@@ -51,7 +51,7 @@ class LoginPage extends StatelessWidget {
                   // Create account function
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: const Color(0xFFFF0569),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 24,
