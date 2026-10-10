@@ -26,6 +26,7 @@ class Topbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //change colors of top bar and navbar deal with thth shit
       padding: EdgeInsets.only(left:12,right:12),
       margin: EdgeInsets.only(top: 30, left:4 ,right: 4),
       child:Column(
@@ -72,7 +73,8 @@ class Topbar extends StatelessWidget {
                 style: TextStyle(
                   color: const Color(0xFFFFFFFF),
                   fontFamily: 'Satoshi',
-                  fontWeight: FontWeight(600)
+                  fontWeight: FontWeight(600),
+                  letterSpacing: 1.2
                 ),)],
               ),
             )],
@@ -122,30 +124,52 @@ class Navbar extends StatelessWidget {
       child: Row( crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        SvgPicture.asset(
+        GestureDetector(
+
+          onTap: (){
+            print('home ');
+
+          },child: SvgPicture.asset(
           'assets/icons/Home.svg',
           width: 32,
           height: 32,
 
         ),
-        SvgPicture.asset(
-          'assets/icons/Awards.svg',
-          width: 32,
-          height: 32,
-
         ),
+        GestureDetector(
+          onTap: (){
+            print('Awards');
+          },
+          child: SvgPicture.asset(
+            'assets/icons/Awards.svg',
+            width: 32,
+            height: 32,
 
-        SvgPicture.asset(
+          )
+        ),GestureDetector(
+
+          onTap: (){
+            print('Books');
+
+          },child: SvgPicture.asset(
           'assets/icons/Read 1.svg',
           width: 32,
           height: 32,
 
-        ),        SvgPicture.asset(
-          'assets/icons/Flag.svg',
-          width: 32,
-          height: 32,
+        ),
+        ),
+        GestureDetector(
+            onTap: (){
+              print('Flag');
+            },
+            child: SvgPicture.asset(
+              'assets/icons/Flag.svg',
+              width: 32,
+              height: 32,
 
+            )
         )
+
       ],),
 
     );
