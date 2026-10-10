@@ -1,21 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: const Center(
-        child: Text(
-          'Welcome to fghjk',
-          style: TextStyle(fontSize: 22),
-        ),
-      ),
-    );
-  }
-}
-
 //topbar where we see name and Profile
 class Topbar extends StatelessWidget {
   const Topbar({super.key});
@@ -23,7 +7,7 @@ class Topbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //change colors of top bar and navbar deal with thth shit
+      //change colors of top bar and navbar deal with the shit
         padding: EdgeInsets.only(left:12,right:12),
         margin: EdgeInsets.only(top: 30, left:4 ,right: 4),
         child:Column(
@@ -36,7 +20,7 @@ class Topbar extends StatelessWidget {
                 //font size
                   fontSize: 16,
                   fontWeight: FontWeight(1000),
-                  color: const Color(0xFFFFFFFF),
+                  color: Color(0xFFFFFFFF),
                   fontFamily: 'Satoshi'
               ) ,),
             ),SizedBox(
@@ -44,7 +28,7 @@ class Topbar extends StatelessWidget {
             )
               ,
 
-              // chage this to be Dynamic
+              // change this to be Dynamic
               Text("Sathvik",style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight(1000),
@@ -65,7 +49,7 @@ class Topbar extends StatelessWidget {
                     'assets/icons/Search.svg',
                     width: 24,
                     height: 24,
-                  ),//to bring in some spce without messing around
+                  ),//to bring in some space without messing around
                     const SizedBox(width: 6,),Text("Search",
                       style: TextStyle(
                           color: const Color(0xFFFFFFFF),
@@ -110,6 +94,27 @@ class Body extends StatelessWidget {
 
 
 
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Topbar(),
+            Expanded(child: Body()),
+            Navbar(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
 
@@ -124,7 +129,7 @@ class Navbar extends StatelessWidget {
           GestureDetector(
 
             onTap: (){
-              print('home ');
+              debugPrint('home ');
 
             },child: SvgPicture.asset(
             'assets/icons/Home.svg',
@@ -135,7 +140,7 @@ class Navbar extends StatelessWidget {
           ),
           GestureDetector(
               onTap: (){
-                print('Awards');
+                debugPrint('Awards');
               },
               child: SvgPicture.asset(
                 'assets/icons/Awards.svg',
@@ -146,7 +151,7 @@ class Navbar extends StatelessWidget {
           ),GestureDetector(
 
             onTap: (){
-              print('Books');
+              debugPrint('Books');
 
             },child: SvgPicture.asset(
             'assets/icons/Read 1.svg',
@@ -157,7 +162,7 @@ class Navbar extends StatelessWidget {
           ),
           GestureDetector(
               onTap: (){
-                print('Flag');
+                debugPrint('Flag');
               },
               child: SvgPicture.asset(
                 'assets/icons/Flag.svg',
