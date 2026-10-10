@@ -7,10 +7,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: const Center(
         child: Text(
-          'Welcome to the Home Page!',
+          'Welcome to fghjk',
           style: TextStyle(fontSize: 22),
         ),
       ),
     );
   }
 }
+ 
