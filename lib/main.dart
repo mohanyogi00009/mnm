@@ -4,7 +4,7 @@ void main() {runApp(MaterialApp(
     body:Container(
       padding: EdgeInsets.only(top: 30),
       child: Column(
-        children: [Topbar(),
+        children: [Topbar(),Body(),
           Navbar(key : const ValueKey('Navbar'))]
 
       ),
@@ -17,20 +17,75 @@ void main() {runApp(MaterialApp(
 }
 
 
-
+//topbar where we see name and Profile
 class Topbar extends StatelessWidget {
   const Topbar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(left:12,right:12),
       margin: EdgeInsets.only(top: 30, left:4 ,right: 4),
-      child:Row(
-        children: [Text("ASA",
-        style:const TextStyle(fontFamily: 'Satoshi',
-            fontSize:24),
+      child:Column(
+        children: [Row(
+          children: [CircleAvatar(
+            //circle size
+            radius: 20,
+            backgroundColor: const Color(0xFF54426B),
+            child: Text('S',style: const TextStyle(
+              //font size
+                fontSize: 16,
+                fontWeight: FontWeight(1000),
+                color: const Color(0xFFFFFFFF),
+                fontFamily: 'Satoshi'
+            ) ,),
+          ),SizedBox(
+            width: (MediaQuery.of(context).size.width * 0.05).clamp(18.0, 40.0),
+          )
+            ,
+
+            // chage this to be Dynamic
+            Text("Sathvik",style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight(1000),
+                fontFamily: 'Satoshi'
+
+            ),),Spacer(),
+            Row(
+              children: [Text("Search")],
+            )],
+        ),Container(
+          height: 2,
+          margin: EdgeInsets.only(top:10,bottom: 10),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+            colors: [
+              Color(0xFF8E8D8D), // 0%
+              Color(0xFF8E8D8D), // 20%
+              Color(0xFF000000), // 80%
+              Color(0xFF8E8D8D), // 100%
+            ],stops: [0.0,0.2,0.8,1.0])
+          ),
         )],
       )
+
+    );
+  }
+}
+
+
+class Body extends StatelessWidget {
+  const Body({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(child: Container(
+          padding: EdgeInsets.all(10),
+          color: const Color(0xFF909090),
+          child: Text("wergh"),))
+      ],
     );
   }
 }
