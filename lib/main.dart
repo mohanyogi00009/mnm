@@ -4,7 +4,7 @@ void main() {runApp(MaterialApp(
     body:Container(
       padding: EdgeInsets.only(top: 30),
       child: Column(
-        children: [Topbar(),Body(),
+        children: [Topbar(),Expanded(child: Body()),
           Navbar(key : const ValueKey('Navbar'))]
 
       ),
@@ -81,10 +81,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: Container(
-          padding: EdgeInsets.all(10),
-          color: const Color(0xFF909090),
-          child: Text("wergh"),))
+
       ],
     );
   }
