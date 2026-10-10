@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 void main() {runApp(MaterialApp(
   home:Scaffold(
     body:Container(
@@ -96,15 +98,34 @@ class Navbar extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      padding: EdgeInsets.only(bottom: 30),
+      padding: EdgeInsets.only(bottom: 32),
       child: Row( crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: const <Widget>[
-      Text("ASA",
-        style:const TextStyle(
-            fontSize:24)),
-        Text("HI"),
-        Text("HI")
+      children: <Widget>[
+        SvgPicture.asset(
+          'assets/icons/Home.svg',
+          width: 32,
+          height: 32,
+
+        ),
+        SvgPicture.asset(
+          'assets/icons/Awards.svg',
+          width: 32,
+          height: 32,
+
+        ),
+
+        SvgPicture.asset(
+          'assets/icons/Read 1.svg',
+          width: 32,
+          height: 32,
+
+        ),        SvgPicture.asset(
+          'assets/icons/Flag.svg',
+          width: 32,
+          height: 32,
+
+        )
       ],),
 
     );
