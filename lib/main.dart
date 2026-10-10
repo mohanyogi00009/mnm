@@ -53,8 +53,28 @@ class Topbar extends StatelessWidget {
                 fontFamily: 'Satoshi'
 
             ),),Spacer(),
-            Row(
-              children: [Text("Search")],
+            Container(
+              padding: EdgeInsets.only(left: 10, right :12, top: 3,bottom: 3),
+
+              height: 34,
+              decoration: BoxDecoration(
+                color: const Color(0xFF275FC0),
+
+                borderRadius: BorderRadius.circular(20)
+              ),
+              child: Row(
+                children: [SvgPicture.asset(
+                  'assets/icons/Search.svg',
+                  width: 24,
+                  height: 24,
+                ),//to bring in some spce without messing around
+                 const SizedBox(width: 6,),Text("Search",
+                style: TextStyle(
+                  color: const Color(0xFFFFFFFF),
+                  fontFamily: 'Satoshi',
+                  fontWeight: FontWeight(600)
+                ),)],
+              ),
             )],
         ),Container(
           height: 2,
