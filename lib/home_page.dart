@@ -124,7 +124,7 @@ class Body extends StatelessWidget {
           color: Color(0xFFD4C85C)
       ),
     child: Column(
-      children: [Timetable(),Text("data")],
+      children: [Timetable(),NotesAttendance()],
     ),);
    
   }
