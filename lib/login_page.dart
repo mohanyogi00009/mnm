@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart'; // Import your home page
+import 'register_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -49,8 +50,12 @@ class LoginPage extends StatelessWidget {
               width: 220,
               child: ElevatedButton(
                 onPressed: () {
-                  // Create account function
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const RegisterPage()),
+                  );
                 },
+
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFFF0569),
                   foregroundColor: Colors.white,
