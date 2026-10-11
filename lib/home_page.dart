@@ -19,7 +19,7 @@ class Topbar extends StatelessWidget {
               child: Text('S',style: const TextStyle(
                 //font size
                   fontSize: 16,
-                  fontWeight: FontWeight(1000),
+                  fontWeight: FontWeight.w900,
                   color:  Color(0xFFFFFFFF),
                   fontFamily: 'Satoshi'
               ) ,),
@@ -31,7 +31,7 @@ class Topbar extends StatelessWidget {
               // change this to be Dynamic
               Text("Sathvik",style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight(1000),
+                  fontWeight: FontWeight.w900,
                   fontFamily: 'Satoshi'
 
               ),),Spacer(),
@@ -54,7 +54,7 @@ class Topbar extends StatelessWidget {
                       style: TextStyle(
                           color: const Color(0xFFFFFFFF),
                           fontFamily: 'Satoshi',
-                          fontWeight: FontWeight(600),
+                          fontWeight: FontWeight.w600,
                           letterSpacing: 1.2
                       ),)],
                 ),
