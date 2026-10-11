@@ -6,6 +6,16 @@ class Tbd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      width: double.infinity,
+
+      margin: EdgeInsets.only(top: 6,bottom: 8,left: 12,right: 12),
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: Color(0xFFE3E2D3)
+      ),
+      child: Text("data"),
+    );
   }
 }
