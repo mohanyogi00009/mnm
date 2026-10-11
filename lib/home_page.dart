@@ -20,7 +20,7 @@ class Topbar extends StatelessWidget {
                 //font size
                   fontSize: 16,
                   fontWeight: FontWeight(1000),
-                  color: Color(0xFFFFFFFF),
+                  color:  Color(0xFFFFFFFF),
                   fontFamily: 'Satoshi'
               ) ,),
             ),SizedBox(
