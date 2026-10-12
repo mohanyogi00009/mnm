@@ -28,6 +28,7 @@ class Navbar extends StatelessWidget {
           GestureDetector(
 
             onTap: (){
+              onChanged(0);
               debugPrint('home ');
 
             },child: SvgPicture.asset(
@@ -39,6 +40,7 @@ class Navbar extends StatelessWidget {
           ),
           GestureDetector(
               onTap: (){
+                onChanged(1);
                 debugPrint('Awards');
               },
               child: SvgPicture.asset(
@@ -50,6 +52,7 @@ class Navbar extends StatelessWidget {
           ),GestureDetector(
 
             onTap: (){
+              onChanged(2);
               debugPrint('Books');
 
             },child: SvgPicture.asset(
@@ -61,6 +64,7 @@ class Navbar extends StatelessWidget {
           ),
           GestureDetector(
               onTap: (){
+                onChanged(3);
                 debugPrint('Flag');
               },
               child: SvgPicture.asset(
