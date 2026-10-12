@@ -139,8 +139,14 @@ class Navbar extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      padding: EdgeInsets.only(bottom: 32),
-      child: Row( crossAxisAlignment: CrossAxisAlignment.end,
+      decoration: BoxDecoration(
+        color: const Color(0xFFD4C85C),
+        borderRadius: BorderRadius.circular(20)
+      ),
+      margin: EdgeInsets.only(left: 12,right: 12),
+      padding: EdgeInsets.only(bottom: 12,top: 12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           GestureDetector(
