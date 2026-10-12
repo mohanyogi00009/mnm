@@ -1,6 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -17,9 +17,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
   bool _isLoading = false;
 
-  // ⚠️ Replace YOUR_APP_NAME with your actual Render service name
-  static const String _baseUrl = 'https://YOUR_APP_NAME.onrender.com';
-
   @override
   void dispose() {
     _nameController.dispose();
@@ -29,12 +26,14 @@ class _RegisterPageState extends State<RegisterPage> {
     super.dispose();
   }
 
+  // Handle registration network request
   Future<void> _handleRegister() async {
     final name = _nameController.text.trim();
     final email = _emailController.text.trim();
     final password = _passwordController.text;
     final confirmPassword = _confirmPasswordController.text;
 
+    // Validation checks
     if (name.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please fill in all fields')),
@@ -54,8 +53,9 @@ class _RegisterPageState extends State<RegisterPage> {
     });
 
     try {
+      // REPLACE with your actual Render web service URL
       final response = await http.post(
-        Uri.parse('$_baseUrl/register'),
+        Uri.parse('https://mnm-1.onrender.com/register'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'name': name,
@@ -66,14 +66,14 @@ class _RegisterPageState extends State<RegisterPage> {
 
       final data = jsonDecode(response.body);
 
-      // Protect against using context if widget was unmounted during await
+      // Check if widget is still in the tree before using context
       if (!mounted) return;
 
       if (response.statusCode == 200 && data['success'] == true) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(data['message'] ?? 'Registration successful!')),
         );
-        Navigator.pop(context); // Go back to previous screen
+        Navigator.pop(context); // Go back to login page
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(data['message'] ?? 'Registration failed')),
@@ -140,8 +140,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   child: _isLoading
                       ? const SizedBox(
-                    height: 20,
                     width: 20,
+                    height: 20,
                     child: CircularProgressIndicator(
                       color: Colors.white,
                       strokeWidth: 2,
