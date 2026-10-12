@@ -15,7 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int id = 0;
+  int id = 1;
+
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,8 @@ class Matter extends StatefulWidget {
 class _MatterState extends State<Matter> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final List<Widget> ls =[Body(),Report()];
+    return ls[widget.selectedIndex];
   }
 }
 
