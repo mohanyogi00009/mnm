@@ -8,6 +8,7 @@ app.use(cors());
 // Temporary in-memory user list
 const users = [];
 
+
 // 👉 Add this home route so visiting the URL in a browser looks nice
 app.get('/', (req, res) => {
   res.send('Backend server is up and running!');
