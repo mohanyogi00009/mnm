@@ -44,7 +44,7 @@ class SubStuff extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(child: Container(
-      margin: EdgeInsets.only(bottom: 20m),
+      margin: EdgeInsets.only(bottom: 20),
       width: double.infinity,
       decoration: BoxDecoration(
         color: const Color(0xFFD4C85C),
