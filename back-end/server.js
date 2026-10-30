@@ -8,8 +8,7 @@ app.use(cors());
 // Temporary in-memory user list
 const users = [];
 
-
-// 👉 Add this home route so visiting the URL in a browser looks nice
+// Home route
 app.get('/', (req, res) => {
   res.send('Backend server is up and running!');
 });
@@ -26,6 +25,19 @@ app.post('/register', (req, res) => {
   users.push({ name, email, password });
   console.log('User registered:', email);
   return res.json({ success: true, message: 'Registration successful!' });
+});
+
+// Login Endpoint
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const user = users.find(u => u.email === email && u.password === password);
+  if (!user) {
+    return res.status(400).json({ success: false, message: 'Invalid email or password' });
+  }
+
+  console.log('User logged in:', email);
+  return res.json({ success: true, message: 'Login successful!' });
 });
 
 // Start server
